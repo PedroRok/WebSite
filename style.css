@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+@import url('https://fonts.googleapis.com/css?family=Archivo');
+
+:root {
+ --myblue: #2F91E0;
+ --mygradient: linear-gradient(130deg, #003E5C 0%,  #011926 100%);
+ --bgcolor: #fefefe;
+ --darkColor: #423D51;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    font-weight: 900;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+    background-attachment: fixed;
+}
+
+
+.gradient_container {
+    position: absolute;
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.gradient {
+    background: var(--mygradient);
+    height: 150vh;
+    width: 140%;
+    rotate: -12deg;
+    transform: translateY(-45%);
+    position: absolute;
+    z-index: -1;
+}
+
+
+.lettering {
+    background-image: url("resources/logo.png");
+    opacity: 20%;
+    background-size: 40vh;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 20vh;
+    width: 140%;
+    rotate: -12deg;
+    transform: translateY(35%);
+    position: absolute;
+    z-index: 1;
+    opacity: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.stroke {
+    background-color: #f3f3f3;
+    height: 10vh;
+    width: 140%;
+    rotate: -12deg;
+    transform: translateY(125%);
+    position: absolute;
+    z-index: 1;
+}
+
+.navbar {
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+      z-index: 1;
+      width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar_logo {
+    background-size: 50%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 0 0;
+    transition: all 0.75s ease-in-out;
+    z-index: -1;
+}
+
+#navbar_logo_scroll {
+  background-size: 50%;
+  display: flex;
+  align-items: flex-end;
+  opacity: 10%;
+  rotate: -12deg;
+  scale: 8;
+  transform: translateY(50%) translateX(40%);
+  padding: 20px 0 0;
+  transition: all 1s ease-in-out;
+  z-index: -1;
+} 
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar_item {
+    height: 80px;
+}
+
+.navbar_links {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 115%;
+}
+
+.navbar_icons {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    text-decoration: none;
+    height: 115%;
+    scale: 0.5;
+    cursor: pointer;
+}
+
+.navbar_links:hover {
+    color: var(--myblue);
+}
+
+
+.navbar_icons:hover {
+    /* filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%) hue-rotate(183deg) brightness(90%) contrast(93%); */
+    color: var(--myblue);
+}   
+
+.navbar_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+
+    .gradient {
+        width: 160%;
+    }
+
+    .lettering {
+        opacity: 20%;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar_mobile {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        text-decoration: none;
+        height: 100%;
+        scale: 0.5;
+        cursor: pointer;
+    }
+  
+    .navbar_links {
+      opacity: 0;
+    }
+
+    .navbar_icons {
+      opacity: 0;
+    }
+
+    #navbar_logo_scroll {
+      background-size: 50%;
+      display: flex;
+      align-items: flex-end;
+      opacity: 0%;
+      scale: 2;
+      rotate: 30deg;
+      transform: translateY(-500%);
+    } 
+  
+    #mobile-menu {
+      position: absolute;
+      top: 12%;
+      right: 6%;
+      transform: translate(5%, 20%);
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: 0px 30px;
+  }
+  
+  #archivo {
+    font-family: 'Archivo', sans-serif;
+  }
+  
+  .hero_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align: left;
+    padding: 80px 5px 0 0;
+  }
+  
+  .hero_name {
+    font-weight: 100;
+    font-stretch: wider;
+    font-size: 30px;
+    letter-spacing: 10px;
+    opacity: 75%;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .hero_desc {
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  .hero_phrase {
+    font-size: 16px;
+    letter-spacing: 2px;
+    opacity: 70%; 
+    font-weight: lighter;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .hero_btn {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 14px 20px;
+    width: 184px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    border-color: #fff;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    z-index: 4;
+  }
+  
+  .hero_btn:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--myblue);
+    transform: scale(1.075);
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 800px) and (min-height: 768px) {
+    .hero_name {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero_name {
+      font-size: 20px;
+      letter-spacing: 5px;
+    }
+  
+    .hero_desc {
+      font-size: 42px;
+    }
+
+    .hero_phrase {
+      font-size: 15px;
+      letter-spacing: 0px;
+    }
+  }
+  
+/* CARD SECTION */
+.cards {
+  display: grid;
+  justify-content: center;
+  align-items: top;
+  height: 100%;
+  padding: 10rem 0;
+  z-index: 50;
+}
+
+.cards_wrapper {
+  display: grid;
+  grid-template-columns: 350px 0px 1fr 1fr;
+  grid-template-rows: 1fr;
+  translate: 100px -150px;
+  z-index: 50;
+  transition: 0.3s ease-in-out;
+}
+
+.card {
+  margin: 10px;
+  height: 321px;
+  width: 288px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  color: #fff;
+  transition: 0.3s ease-in;
+  z-index: 5;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  background: #fff;
+}
+
+.card img {
+  height: 85px;
+  width: 85px;
+  margin-top: 40px;
+  object-fit: cover;
+  align-self: center;
+  z-index: 5;
+  transition: 0.3s ease-in-out;
+}
+
+.card p {
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 16px;
+  padding: 0px 50px 0px 50px;
+  font-size: 16px;
+  color: var(--darkColor);
+  transition: 0.3s ease-in-out;
+}
+
+.card_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 14px 60px;
+  border-radius: 10px;
+  margin: 30px 50px 0px 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-color: var(--myblue);
+  color: var(--myblue);
+  transition: all 0.2s ease-in-out;
+}
+
+.card a:hover {
+  cursor: pointer;
+  background-color: var(--myblue);
+  color: #fff;
+  transform: scale(1.075);
+  letter-spacing: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover{
+  transform: scale(1.075);
+  transition: 0.3s ease-in-out;  
+}
+
+.card:hover p {
+  color: var(--myblue);
+  letter-spacing: 0.5px;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover img {
+  animation-name: rotate;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  transform: scale(1.1);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(12deg);
+  }
+  66% {
+    transform: rotate(-12deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1.1);
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .cards_wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    translate: 0px -100px;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards_wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 12fr;
+    translate: 0px -100px;
+    transition: all 0.3s ease-in-out;
+  }
+
+}
+  

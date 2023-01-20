@@ -27,7 +27,7 @@
                     </li>
                     <li class="navbar_item" >                        
                         <div class="navbar_links">
-                            <a href="" id="dropbtn">Idioma</a>
+                            <a href="#" id="dropbtn">Idioma</a>
                             <img src="resources/svg/arrow.svg">
                             <div class="dropdown-content show">
                                 <b href="#">Portugues</b>
@@ -36,10 +36,14 @@
                         </div>
                     </li>
                     <li class="navbar_item">
-                        <img src="resources/svg/sun.svg" alt="theme" class="navbar_icons">
+                        <div onclick="changeTheme()" class="navbar_icons">
+                            <img src="resources/svg/sun.svg" id="theme" class="light">
+                        </div>
                     </li>
                     <li class="navbar_item">
-                        <img src="resources/svg/minecraft.svg" alt="minecraft" class="navbar_icons">
+                        <div class="navbar_icons">
+                            <img src="resources/svg/minecraft.svg" alt="minecraft">
+                        </div>
                     </li>
             </div>
         </nav>

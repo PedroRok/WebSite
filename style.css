@@ -3,10 +3,13 @@
 
 :root {
  --myblue: #2F91E0;
- --mygradient: linear-gradient(130deg, #003E5C 0%,  #011926 100%);
+ --mygradient: linear-gradient(130deg, #3F85AB 10%,  #003E5C 70%);
+ --strokecolor: #f3f3f3;
  --bgcolor: #fefefe;
- --darkColor: #423D51;
+ --darkTxtColor: #423D51;
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -18,7 +21,7 @@
 }
 
 body {
-  background: white;
+  background: var(--bgcolor);
   background-attachment: fixed;
 }
 
@@ -31,7 +34,6 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: -1;
 }
 
 .gradient {
@@ -61,13 +63,13 @@ body {
 }
 
 .stroke {
-  background-color: #f3f3f3;
+  background-color: var(--strokecolor);
   height: 10vh;
   width: 140%;
   rotate: -12deg;
   transform: translateY(125%);
   position: absolute;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* NAVBAR */
@@ -78,7 +80,7 @@ body {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .navbar_container {
@@ -102,7 +104,6 @@ body {
   background-size: 50%;
   display: flex;
   padding: 10px 0;
-  z-index: -1;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -138,6 +139,8 @@ body {
   margin-left: 12px;
   animation: bouce_rotation_back 0.8s ease-in-out 1;
   animation-fill-mode: forwards;
+  -webkit-animation: bouce_rotation_back 0.8s ease-in-out 1;
+  -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes bouce_rotation_back {
@@ -189,7 +192,7 @@ body {
 
 .dropdown-content {
   position: absolute;
-  background-color: var(--bgcolor);
+  background-color: #fefefe;
   min-width: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   width: 110px;
@@ -199,7 +202,7 @@ body {
 }
 
 .dropdown-content b {
-  color: var(--darkColor);
+  color: #181a1b;
   padding: 12px 0px;
   font-weight: 100;
   letter-spacing: 0px;
@@ -229,27 +232,64 @@ body {
 
 
 
+/* NAVBAR ICONS */
 
-
-
-
-
-
-.navbar_icons {
+.navbar_icons img {
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  width: 40px;
   text-decoration: none;
   height: 100%;
   scale: 0.5;
   cursor: pointer;
+  transition: transform 0.3s ease-out;
 }
+
+.navbar_icons:active {
+  background-color: brown;
+}
+
+.navbar_icons:hover {
+  color: var(--myblue);
+  background-color: #fefefe;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+  transition: letter-spacing 0.2s;
+}
+
+.navbar_icons:hover img {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%) hue-rotate(183deg) brightness(90%) contrast(93%);
+  transform: scale(1.3) rotate(-12deg);
+  transition: transform 0.3s ease-out;
+}
+
+
+
+
+
+@keyframes theme {
+  0% {
+    transform: rotate(360deg);
+  }
+  25% {
+    scale: 0.3;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+
+
+
 
 .navbar_links:hover {
   color: var(--myblue);
-  background-color: var(--bgcolor);
+  background-color: #fefefe;
   letter-spacing: 1px;
   border-radius: 10px 10px 10px 10px;
   cursor: pointer;
@@ -264,7 +304,9 @@ body {
   rotate: 180deg;
   filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%) hue-rotate(183deg) brightness(90%) contrast(93%);
   animation: bouce_rotation 0.8s ease-in-out 1;
+  -webkit-animation: bouce_rotation 0.8s ease-in-out 1;
   animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
   cursor: pointer;
 }
 
@@ -282,18 +324,18 @@ body {
 
 .navbar_links:hover a {
   color: var(--myblue);
-  background-color: var(--bgcolor);
 }
 
 
 .navbar_icons:hover {
-  /* filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%) hue-rotate(183deg) brightness(90%) contrast(93%); */
   color: var(--myblue);
 }   
 
 
 @media screen and (max-width: 960px) {
-
+    :root {
+      --mygradient: linear-gradient(130deg, #003E5C 50%,  #011926 80%);
+    }
     .gradient {
         width: 160%;
     }
@@ -458,18 +500,17 @@ body {
 }
 
 .card {
-  margin: 10px;
+  margin: 10px 40px 10px 10px;
   height: 321px;
   width: 288px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: right;
-  color: #fff;
   transition: 0.3s ease-in;
   z-index: 5;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-  background: #fff;
+  background: var(--bgcolor);
 }
 
 .card img {
@@ -489,7 +530,7 @@ body {
   margin-top: 16px;
   padding: 0px 50px 0px 50px;
   font-size: 16px;
-  color: var(--darkColor);
+  color: var(--darkTxtColor);
   transition: 0.3s ease-in-out;
 }
 
@@ -500,10 +541,9 @@ body {
 }
 
 .card a {
-  color: #fff;
   text-decoration: none;
   border: 1px solid black;
-  background-color: #fff;
+  background-color: var(--bgcolor);
   padding: 14px 60px;
   border-radius: 10px;
   margin: 30px 50px 0px 50px;
@@ -535,27 +575,10 @@ body {
 }
 
 .card:hover img {
-  animation-name: rotate;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.3s;
+  animation: rotate ease-in-out 0.3s;
+  -webkit-animation: rotate ease-in-out 0.3s;
   transform: scale(1.1);
 }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  33% {
-    transform: rotate(12deg);
-  }
-  66% {
-    transform: rotate(-12deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(0deg) scale(1.1);
-  }
-}
-
 
 
 @media screen and (max-width: 698px) {

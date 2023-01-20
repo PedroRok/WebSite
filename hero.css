@@ -1,0 +1,94 @@
+/* Hero Section */
+.hero {
+  padding: 0px 30px;
+}
+
+#archivo {
+  font-family: "Archivo", sans-serif;
+}
+
+.hero_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+  text-align: left;
+  padding: 80px 5px 0 0;
+}
+
+.hero_name {
+  font-weight: 100;
+  font-stretch: wider;
+  font-size: 30px;
+  letter-spacing: 10px;
+  opacity: 75%;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.hero_desc {
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.hero_phrase {
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 70%;
+  font-weight: lighter;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.hero_btn {
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 14px 20px;
+  width: 184px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  border-color: #fff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  z-index: 4;
+}
+
+.hero_btn:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--myblue);
+  transform: scale(1.075);
+  letter-spacing: 2px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 800px) and (min-height: 768px) {
+  .hero_name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero_name {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .hero_desc {
+    font-size: 42px;
+  }
+
+  .hero_phrase {
+    font-size: 15px;
+    letter-spacing: 0px;
+  }
+}

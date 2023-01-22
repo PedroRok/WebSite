@@ -3,6 +3,8 @@
 
 :root {
   --myblue: #5ba8e7; /* #5BA8E7 #2F91E0*/
+  --txtcolor: #0D0D0D;
+  --subtxtcolor: #757575;
   --mygradient: linear-gradient(130deg, #3f85ab 10%, #003e5c 70%);
   --strokecolor: #f3f3f3;
   --bgcolor: #fefefe;

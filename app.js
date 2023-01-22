@@ -50,6 +50,7 @@ function toTheme(theme) {
   if (theme == "dark") {
     variables = {
       '--bgcolor': '#181a1b',
+      '--txtcolor': '#FDFDFD',
       '--strokecolor': '#1f2123',
       '--darkTxtColor': '#bbb5ac',
       '--myblue': '#72B4EA',
@@ -58,6 +59,7 @@ function toTheme(theme) {
   } else {
     variables = {
       '--bgcolor': '#fefefe',
+      '--txtcolor': '#0D0D0D',
       '--strokecolor': '#f3f3f3',
       '--darkTxtColor': '#423D51',
       '--myblue': '#5BA8E7',

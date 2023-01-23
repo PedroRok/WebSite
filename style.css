@@ -9,6 +9,7 @@
   --strokecolor: #f3f3f3;
   --bgcolor: #fefefe;
   --darkTxtColor: #423d51;
+  --negative: 0;
 }
 
 * {
@@ -23,9 +24,14 @@
 body {
   background: var(--bgcolor);
   background-attachment: fixed;
+  position: flex;
 }
 
 /* BACKGROUND */
+.background {
+  position: flex;
+}
+
 .gradient_container {
   position: absolute;
   height: 120vh;
@@ -34,6 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: -10;
 }
 
 .gradient {
@@ -43,7 +50,7 @@ body {
   rotate: -12deg;
   transform: translateY(-45%);
   position: absolute;
-  z-index: -1;
+  z-index: -5;
 }
 
 .lettering {

@@ -2,9 +2,14 @@
   display: flex;
   justify-content: space-between;
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 25px auto;
+  transition: all 0.5s ease-in-out;
 }
 
+#about {
+  margin: 200px auto;
+  transition: all 0.5s ease-in-out;
+}
 
 .about_icons {
   display: flex;
@@ -17,6 +22,8 @@
   position: absolute;
   object-fit: none;
   padding-right: 20px;
+  opacity: 5%;
+  filter: invert(var(--negative));
   top: -115px;
 }
 
@@ -32,6 +39,7 @@
   width: 90px;
   height: 90px;
   margin: 20px;
+  filter: invert(var(--negative));
   transition: all 0.5s ease-in-out;
 }
 

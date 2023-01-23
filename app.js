@@ -1,9 +1,9 @@
 const logo = document.querySelector("#navbar_logo");
-const navbar = document.querySelector(".navbar");
-const items = document.querySelectorAll(".navbar_item");
 
 const lang = document.querySelector("#dropbtn");
 const root = document.querySelector(":root");
+
+const about = document.querySelector("#about");
 
 window.addEventListener("load", () => {
   if (localStorage.getItem("theme") == "dark") {
@@ -19,8 +19,10 @@ window.addEventListener("scroll", function () {
   //var scrollPercent = (scroll / (dheight - wheight)) * 100;
   if (scroll > 80) {
     logo.id = "navbar_logo_scroll";
+    about.id = "about_scroll";
   } else {
     logo.id = "navbar_logo";
+    about.id = "about";
   }
 });
 
@@ -54,7 +56,8 @@ function toTheme(theme) {
       '--strokecolor': '#1f2123',
       '--darkTxtColor': '#bbb5ac',
       '--myblue': '#72B4EA',
-      '--mygradient': 'linear-gradient(130deg, #003E5C 10%,  #011926 70%)'
+      '--mygradient': 'linear-gradient(130deg, #003E5C 10%,  #011926 70%)',
+      '--negative': '1'
     };
   } else {
     variables = {
@@ -63,6 +66,7 @@ function toTheme(theme) {
       '--strokecolor': '#f3f3f3',
       '--darkTxtColor': '#423D51',
       '--myblue': '#5BA8E7',
+      '--negative': '0',
       '--mygradient': 'linear-gradient(130deg, #3F85AB 10%,  #003E5C 70%)'
     };
   }

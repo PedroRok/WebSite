@@ -6,14 +6,12 @@
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1;
 }
 
 .navbar_container {
   display: flex;
   justify-content: space-between;
   height: 80px;
-  z-index: 1;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
@@ -23,7 +21,7 @@
 #navbar_logo {
   align-items: center;
   cursor: pointer;
-  transition: all 0.75s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .navbar_logo {
@@ -35,9 +33,8 @@
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  z-index: -10;
 }
-
+/*
 #navbar_logo_scroll {
   align-items: flex-end;
   opacity: 4%;
@@ -45,6 +42,17 @@
   scale: 8;
   transform: translateY(50%) translateX(40%);
   transition: all 1s ease-in-out;
+}
+*/
+#navbar_logo_scroll {
+  background-size: 50%;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0%;
+  scale: 2;
+  rotate: 30deg;
+  transform: translateY(-500%);
+  transition: all 0.5s ease-in-out;
 }
 
 .navbar_menu {
@@ -149,28 +157,28 @@
 }
 
 .navbar_links:hover {
-    color: var(--myblue);
-    background-color: #fefefe;
-    letter-spacing: 1px;
-    border-radius: 10px 10px 10px 10px;
-    cursor: pointer;
-    transition: letter-spacing 0.2s;
-  }
-  
-  .navbar_links:hover .show {
-    display: block;
-  }
-  
-  .navbar_links:hover img {
-    rotate: 180deg;
-    filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%)
-      hue-rotate(183deg) brightness(90%) contrast(93%);
-    animation: bouce_rotation 0.8s ease-in-out 1;
-    -webkit-animation: bouce_rotation 0.8s ease-in-out 1;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
-    cursor: pointer;
-  }
+  color: var(--myblue);
+  background-color: #fefefe;
+  letter-spacing: 1px;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+  transition: letter-spacing 0.2s;
+}
+
+.navbar_links:hover .show {
+  display: block;
+}
+
+.navbar_links:hover img {
+  rotate: 180deg;
+  filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%)
+    hue-rotate(183deg) brightness(90%) contrast(93%);
+  animation: bouce_rotation 0.8s ease-in-out 1;
+  -webkit-animation: bouce_rotation 0.8s ease-in-out 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  cursor: pointer;
+}
 
 @keyframes bouce_rotation {
   0% {
@@ -195,47 +203,48 @@
 /* NAVBAR ICONS */
 
 .navbar_icons img {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    text-decoration: none;
-    height: 100%;
-    scale: 0.5;
-    cursor: pointer;
-    transition: transform 0.3s ease-out;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  text-decoration: none;
+  height: 100%;
+  scale: 0.5;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.navbar_icons:active {
+  background-color: brown;
+}
+
+.navbar_icons:hover {
+  color: var(--myblue);
+  background-color: #fefefe;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+  transition: letter-spacing 0.2s;
+}
+
+.navbar_icons:hover img {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%)
+    hue-rotate(183deg) brightness(90%) contrast(93%);
+  transform: scale(1.3) rotate(-12deg);
+  transition: transform 0.3s ease-out;
+}
+
+@keyframes theme {
+  0% {
+    transform: rotate(360deg);
   }
-  
-  .navbar_icons:active {
-    background-color: brown;
+  25% {
+    scale: 0.3;
   }
-  
-  .navbar_icons:hover {
-    color: var(--myblue);
-    background-color: #fefefe;
-    border-radius: 10px 10px 10px 10px;
-    cursor: pointer;
-    transition: letter-spacing 0.2s;
+  100% {
+    transform: rotate(0deg);
   }
-  
-  .navbar_icons:hover img {
-    filter: brightness(0) saturate(100%) invert(65%) sepia(64%) saturate(4456%) hue-rotate(183deg) brightness(90%) contrast(93%);
-    transform: scale(1.3) rotate(-12deg);
-    transition: transform 0.3s ease-out;
-  }
-  
-  @keyframes theme {
-    0% {
-      transform: rotate(360deg);
-    }
-    25% {
-      scale: 0.3;
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
+}
 
 @media screen and (max-width: 960px) {
   :root {

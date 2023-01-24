@@ -1,0 +1,22 @@
+.contact_container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 25px auto;
+  transition: all 0.5s ease-in-out;
+}
+
+#contact {
+  margin: 200px auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.contact_bg {
+  background-color: var(--darkTxtColor);
+  width: 100%;
+  opacity: 4%;
+  left: 0;
+  height: 20rem;
+  z-index: -1;
+  position: absolute;
+}

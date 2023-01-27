@@ -5,6 +5,9 @@ const root = document.querySelector(":root");
 
 const about = document.querySelector("#about");
 
+const container = document.getElementById("burg");
+const ncontents = document.getElementById("nvbar_contents");
+
 window.addEventListener("load", () => {
   if (localStorage.getItem("theme") == "dark") {
     changeTheme();
@@ -20,14 +23,18 @@ window.addEventListener("scroll", function () {
   if (scroll > 80) {
     logo.id = "navbar_logo_scroll";
     about.id = "about_scroll";
+    root.style.setProperty("--burguer-color", "#5ba8e7");
   } else {
     logo.id = "navbar_logo";
     about.id = "about";
+    root.style.setProperty("--burguer-color", "#fefefe");
   }
 });
 
 function changeTheme() {
   const element = document.getElementById("theme");
+  if (isInAnimation(element)) return;
+  addAnimation(element, 800);
   setTimeout(() => {
     if (element.classList.contains("dark")) {
       element.classList.remove("dark");
@@ -73,4 +80,48 @@ function toTheme(theme) {
   setVariables(variables);
 
   localStorage.setItem("theme", theme);
+}
+
+
+function burguerClick() {
+  if (isInAnimation(container)) return;
+  addAnimation(container);
+  if (container.classList.contains("burguer_passive")) {
+    changeBurgState(true);
+    ncontents.style.display = "flex";
+    ncontents.style.animation = "scaling 0.3s ease-in 1";
+  } else {
+    ncontents.style.animation = "reverse_scaling 0.3s ease-in";
+    setTimeout(() => {
+    changeBurgState(false);
+    ncontents.style.display = "none";
+    }, 290);
+  }
+
+
+  /*const nav = document.getElementById("navbar");
+  nav.classList.toggle("change");
+  const navItems = document.getElementById("navbar_items");
+  navItems.classList.toggle("change");*/
+}
+
+function isInAnimation(element) {
+  return element.classList.contains("in_animation");
+}
+
+function addAnimation(element, time=300) {
+  element.classList.add("in_animation");
+  setTimeout(() => {
+    element.classList.remove("in_animation");
+  }, time);
+}
+
+function changeBurgState(highlight) {
+  if (highlight) {
+    container.classList.add("burguer_active");
+    container.classList.remove("burguer_passive");
+  } else {
+    container.classList.add("burguer_passive");
+    container.classList.remove("burguer_active");
+  }
 }

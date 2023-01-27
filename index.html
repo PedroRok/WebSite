@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Rok</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/burguer.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/cards.css">
@@ -30,29 +31,36 @@
             <div class="navbar_container">
                 <img src="resources/logo.png" alt="logo" class="navbar_logo" href="#home" id="navbar_logo">
                 <ul class="navbar_menu">
-                    <li class="navbar_item">
-                        <a href="#contact" class="navbar_links", id="home-page">Contato</a>
-                    </li>
-                    <li class="navbar_item" >                        
-                        <div class="navbar_links">
-                            <a href="#" id="dropbtn">Idioma</a>
-                            <img src="resources/svg/arrow.svg">
-                            <div class="dropdown-content show">
-                                <b href="#">Portugues</b>
-                                <b href="#">English</b>
+                    <div class="navbar_contents" id="nvbar_contents">
+                        <li class="navbar_item">
+                            <a href="#contact" class="navbar_links", id="home-page">Contato</a>
+                        </li>
+                        <li class="navbar_item" >                        
+                            <div class="navbar_links">
+                                <a href="#" id="dropbtn">Idioma</a>
+                                <img src="resources/svg/arrow.svg">
+                                <div class="dropdown-content show">
+                                    <b href="#">Portugues</b>
+                                    <b href="#">English</b>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="navbar_item">
-                        <div onclick="changeTheme()" class="navbar_icons">
-                            <img src="resources/svg/sun.svg" id="theme" class="light">
-                        </div>
-                    </li>
-                    <li class="navbar_item">
-                        <div class="navbar_icons">
-                            <img src="resources/svg/minecraft.svg" alt="minecraft">
-                        </div>
-                    </li>
+                        </li>
+                        <li class="navbar_item">
+                            <div onclick="changeTheme()" class="navbar_icons">
+                                <img src="resources/svg/sun.svg" id="theme" class="light">
+                            </div>
+                        </li>
+                        <li class="navbar_item">
+                            <div class="navbar_icons">
+                                <img src="resources/svg/minecraft.svg" alt="minecraft">
+                            </div>
+                        </li>
+                    </div>
+                <div onclick="burguerClick()" class="burguer_container burguer_passive" id="burg">
+                    <span class="burg_bar"></span>
+                    <span class="burg_bar"></span>
+                    <span class="burg_bar"></span>
+                </div>
             </div>
         </nav>
         <!-- End Navbar -->

@@ -10,6 +10,7 @@
   --bgcolor: #fefefe;
   --darkTxtColor: #423d51;
   --negative: 0;
+  --burguer-color: #fefefe;
 }
 
 * {
@@ -25,6 +26,10 @@ body {
   background: var(--bgcolor);
   background-attachment: fixed;
   position: flex;
+}
+
+body img {
+  user-select: none
 }
 
 body h2 {

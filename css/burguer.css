@@ -1,0 +1,65 @@
+.burguer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.burguer_container .burg_bar {
+  display: block;
+  width: 1.25rem;
+  height: 1px;
+  margin: 3px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.burguer_passive {
+    background-color: none;
+    border: var(--burguer-color) 1px solid;
+    border-radius: 10px;
+    cursor: none;
+    scale: 1;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.burguer_passive .burg_bar {
+  background: var(--burguer-color);
+  scale: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.burguer_passive:hover, .burguer_active {
+  background-color: var(--myblue);
+  border: var(--myblue) 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  scale: 1.1;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.burguer_passive:hover .burg_bar, .burguer_active .burg_bar {
+  background: #fff;
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
+}
+
+.burguer_active .burg_bar:nth-child(2) {
+  rotate: 360deg;
+  width: 1rem;
+  opacity: 0;
+}
+
+.burguer_active .burg_bar:nth-child(1) {
+  transform: translateY(0.4rem) rotate(45deg);
+  width: 1rem;
+}
+
+.burguer_active .burg_bar:nth-child(3) {
+  transform: translateY(-0.4rem) rotate(-45deg);
+  width: 1rem;
+}
